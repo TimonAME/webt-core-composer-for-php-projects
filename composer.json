@@ -1,0 +1,19 @@
+{
+    "name": "timon/webt-core-composer-for-php-projects",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "src\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "TimonAME",
+            "email": "timon-a@outlook.at"
+        }
+    ],
+    "require": {
+        "endroid/qr-code": "^5.0",
+        "twig/twig": "^3.8"
+    }
+}
