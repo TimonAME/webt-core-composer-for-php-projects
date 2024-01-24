@@ -21,10 +21,10 @@ class generateQR {
         return 
             Builder::create()
             ->writer(new PngWriter())
-            ->writerOptions([])
+            //->writerOptions([])
             ->data($this->data)
             ->encoding(new Encoding('UTF-8'))
-            ->validateResult(false)
+            //->validateResult(false)
             ->build();
     }
 }
