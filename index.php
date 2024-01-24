@@ -44,11 +44,15 @@ if (isset($_GET['data']) && !empty($_GET['data'])) {
     //Save to Test QR-Code Reader:
     $result->saveToFile(dirname(__DIR__).'/webt-test/QRScanner/files/qr-code.png');
 
+    /*
     // Encode the QR code string as base64
     $qrBase64 = base64_encode($qrString);
 
     // Use the base64 string as the source for an image tag
     $qrImageSrc = 'data:'.$result->getMimeType().';base64,'.$qrBase64;
+    */
+
+    $dataUri = $result->getDataUri();
 }
 
 //for TWIG:
@@ -75,10 +79,10 @@ echo $twig->render('base.twig', [
             <button class="btn btn-primary" type="submit">Generate</button>
         </div>
     </form>
-    <?php if (!empty($qrImageSrc)): ?>
-    <div class="text-center">
-        <img src="<?php echo $qrImageSrc; ?>" class="img-fluid" alt="QR Code">
-    </div>
+    <?php if (!empty($dataUri)): ?>
+        <div class="text-center">
+            <img src="<?php echo $dataUri; ?>">
+        </div>
     <?php endif; ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
