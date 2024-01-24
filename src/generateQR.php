@@ -6,10 +6,6 @@ require 'vendor/autoload.php';
 
 use Endroid\QrCode\Builder\Builder;
 use Endroid\QrCode\Encoding\Encoding;
-use Endroid\QrCode\ErrorCorrectionLevel;
-use Endroid\QrCode\Label\LabelAlignment;
-use Endroid\QrCode\Label\Font\NotoSans;
-use Endroid\QrCode\RoundBlockSizeMode;
 use Endroid\QrCode\Writer\PngWriter;
 class generateQR {
     public string $data;
@@ -21,10 +17,8 @@ class generateQR {
         return 
             Builder::create()
             ->writer(new PngWriter())
-            //->writerOptions([])
             ->data($this->data)
             ->encoding(new Encoding('UTF-8'))
-            //->validateResult(false)
             ->build();
     }
 }
