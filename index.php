@@ -41,6 +41,9 @@ if (isset($_GET['data']) && !empty($_GET['data'])) {
     // Get the QR code as a string
     $qrString = $result->getString();
 
+    //Save to Test QR-Code Reader:
+    $result->saveToFile(dirname(__DIR__).'/Tests/QRScanner/files/qr-code.png');
+
     // Encode the QR code string as base64
     $qrBase64 = base64_encode($qrString);
 
