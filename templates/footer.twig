@@ -1,0 +1,7 @@
+{% block content %}
+    {% if not empty(qrImageSrc) %}
+        <div class="text-center">
+            <img src="{{ qrImageSrc }}" class="img-fluid" alt="QR Code">
+        </div>
+    {% endif %}
+{% endblock %}

@@ -23,11 +23,12 @@ require 'vendor/autoload.php';
 use src\generateQR;
 
 //for TWIG: composer require twig/twig =>
+/*
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 $loader = new FilesystemLoader('templates');
 $twig = new Environment($loader);
-
+*/
 
 
 $qrImageSrc = '';
@@ -46,7 +47,16 @@ if (isset($_GET['data']) && !empty($_GET['data'])) {
     // Use the base64 string as the source for an image tag
     $qrImageSrc = 'data:'.$result->getMimeType().';base64,'.$qrBase64;
 }
+
+//for TWIG:
+    /*
+echo $twig->render('base.twig', [
+    'qrImageSrc' => $qrImageSrc,
+]);
+*/
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
